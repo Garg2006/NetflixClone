@@ -1,0 +1,389 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container_Top {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.container_Top::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    #000000 0%,
+    #301c1d 5%,
+    #211617 25%,
+    #191417 50%,
+    #000000 90%
+  );
+  z-index: -1;
+  backdrop-filter: brightness(0.8) contrast(1.1);
+}
+
+.NetflixPageMainContentContainer {
+  margin-top: 10px;
+  margin-bottom: 16px;
+  position: relative;
+  height: 75vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  mask-image: radial-gradient(
+    103% 10.5% at 50% 102%,
+    transparent 50%,
+    white 52%
+  );
+  filter: drop-shadow(24px 32px 24px rgba(0, 0, 0, 0.6));
+  border-radius: 20px 20px 16px 16px;
+  border: 1px solid #2d2626;
+  box-sizing: border-box;
+}
+
+.NetflixPageMainContentContainer::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  background: linear-gradient(
+    to top,
+    rgba(255, 255, 255, 0.2) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+@media (min-width: 1280px) {
+  .NetflixPageMainContentContainer {
+    height: 75vh;
+  }
+}
+@media (max-width: 1279px) {
+  .NetflixPageMainContentContainer {
+    height: 65vh;
+  }
+}
+@media (max-height: 600px) and (min-width: 400px) and (max-width: 800px) {
+  .NetflixPageMainContentContainer {
+    height: 110vh;
+  }
+}
+
+
+
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  display: flex;
+  animation: scrollBg 90s linear infinite;
+  /* width: 1000%; */
+  height: 100%;
+}
+
+.background img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+@media (min-width: 1280px) {
+  .background {
+    width: 300%;
+  }
+}
+@media (min-width: 960px) and (max-width: 1279px) {
+  .background {
+    width: 400%;
+  }
+}
+@media (min-width: 600px) and (max-width: 959px) {
+  .background {
+    width: 500%;
+  }
+}
+@media (max-width: 599px) {
+  .background {
+    width: 600%;
+  }
+}
+
+@keyframes scrollBg {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+.InnertrendingContentContainer {
+  overflow-x: hidden;
+  display: flex;
+  gap: 32px;
+  margin-bottom: 20px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+  padding-top: 16px;
+  z-index: 9999;
+  mask: linear-gradient(
+    to right,
+    transparent,
+    black 0%,
+    black 80%,
+    transparent
+  );
+}
+
+.InnertrendingContentContainer::-webkit-scrollbar {
+  display: none;
+}
+.popUp::-webkit-scrollbar {
+  display: none;
+}
+
+/* Right Scroll Animation */
+@keyframes moveRight {
+  from {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 0%,
+      black 80%,
+      transparent
+    );
+  }
+  to {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+}
+.right {
+  animation: moveRight 0.5s ease-in-out forwards;
+}
+
+/* Fully Right Animation */
+@keyframes moveFullyRight {
+  from {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+  to {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 100%,
+      transparent
+    );
+  }
+}
+.fullyRight {
+  animation: moveFullyRight 0.6s ease-in-out forwards;
+}
+
+/* Left Scroll Animation */
+@keyframes moveLeft {
+  from {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 100%,
+      transparent
+    );
+  }
+  to {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+}
+.left {
+  animation: moveLeft 0.5s ease-in-out forwards;
+}
+
+/* Fully Left Animation */
+@keyframes moveFullyLeft {
+  from {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 20%,
+      black 80%,
+      transparent
+    );
+  }
+  to {
+    mask: linear-gradient(
+      to right,
+      transparent,
+      black 0%,
+      black 80%,
+      transparent
+    );
+  }
+}
+.fullyLeft {
+  animation: moveFullyLeft 1s ease-in-out forwards;
+}
+
+.SignInPageContainer {
+  position: relative;
+  color: white;
+  z-index: 1;
+}
+
+.SignInPageContainer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/signInPageBAckgroundImg.jpg");
+  background-repeat: no-repeat;
+  background-position: top center;
+  z-index: -2;
+}
+.popUpImg {
+  position: relative;
+}
+.popUpImg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+      40deg,
+      rgb(22, 22, 22) 24.16%,
+      rgba(6, 10, 23, 0) 56.61%
+    ),
+    linear-gradient(0deg, rgb(22, 22, 22) 3.91%, rgba(6, 10, 23, 0) 69.26%);
+}
+.popUpImg img {
+  width: 100%;
+  border-bottom: 1px solid #161616;
+}
+.scrollbar_hide::-webkit-scrollbar {
+  display: none;
+}
+.addToWishListContainer {
+  position: relative;
+  margin: 4px;
+}
+.addToWishList {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.625rem;
+  color: #181818;
+  background-color: #e6e6e6;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.75);
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.3rem;
+  visibility: hidden;
+  white-space: nowrap;
+}
+.addToWishListContainer:hover .addToWishList {
+  visibility: visible;
+}
+.addToWishList::after {
+  content: "";
+  position: absolute;
+  border-top: 16px solid rgba(230, 230, 230, 1);
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  left: 50%;
+  top: 70%;
+  z-index: 0;
+  transform: translateX(-50%);
+}
+.moreInfo {
+  position: absolute;
+  bottom: 100%;
+  white-space: nowrap;
+  left: -1.7rem;
+  font-size: 0.75rem;
+  padding: 0.25rem 0.75rem;
+  margin-bottom: 0.625rem;
+  color: #181818;
+  background-color: #e6e6e6;
+  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.75);
+  transition: all 0.2s ease-in-out;
+  border-radius: 0.3rem;
+  visibility: hidden;
+}
+.moreInfoContainer:hover .moreInfo {
+  visibility: visible;
+}
+
+.moreInfo::after {
+  content: "";
+  position: absolute;
+  border-top: 16px solid rgba(230, 230, 230, 1);
+  border-left: 16px solid transparent;
+  border-right: 16px solid transparent;
+  left: 50%;
+  top: 70%;
+  z-index: 0;
+  transform: translateX(-50%);
+}
+.feedback {
+  visibility: hidden;
+}
+.feedbackContainer:hover .feedback {
+  visibility: visible;
+}
+.search::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+  display: none;
+}
+
+.loader {
+  border: 4px solid #222;
+  border-top: 4px solid #e50914; 
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
